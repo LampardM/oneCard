@@ -20,7 +20,8 @@
 
 <script>
  
-import calendar from './components/calendar/calendar.vue'
+import calendar from './components/calendar/calendar.vue';
+
 export default {
     name: 'app',
     components: {
