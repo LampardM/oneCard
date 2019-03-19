@@ -21,6 +21,7 @@
 <script>
  
 import calendar from './components/calendar/calendar.vue';
+import { Pipe } from './utils/applicationModel.js'
 
 export default {
     name: 'app',
@@ -44,6 +45,15 @@ export default {
                 }
             }
         }
+    },
+    mounted() {
+      let test = new Pipe()
+      test.setParams({
+        name: 'zl'
+      })
+      test.execute().then(() => {
+        
+      })
     },
     methods:{
         openByDialog(){
