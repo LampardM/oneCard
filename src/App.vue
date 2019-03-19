@@ -46,15 +46,7 @@ export default {
             }
         }
     },
-    mounted() {
-      let test = new Pipe()
-      test.setParams({
-        name: 'zl'
-      })
-      test.execute().then(() => {
-        
-      })
-    },
+    mounted() {},
     methods:{
         openByDialog(){
             this.calendar4.show=true;

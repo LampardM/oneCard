@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Indicator } from 'mint-ui';
+import 'mint-ui/lib/style.css';
 import _ from 'lodash';
 
 class baseModel {
@@ -42,7 +43,7 @@ class baseModel {
   }
 
   _showLoading(title = '加载中..') {
-    Indicator.open(title);
+    Indicator.open();
   }
 
   _hideLoading() {

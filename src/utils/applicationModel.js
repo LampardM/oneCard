@@ -6,7 +6,7 @@ class Pipe extends baseModel {
     this.url = '15045/json/pipe';
     this.method = 'get';
     this.desc = '通用pipe接口';
-    this.ajaxLoading = false;
+    this.ajaxLoading = true;
   }
   dataformat(data) {
     super.dataformat(data);
