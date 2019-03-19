@@ -8,12 +8,12 @@
         </div>
 
         <transition name="fade">
-        <div class="calendar-dialog" v-if="calendar4.show">
-            <div class="calendar-dialog-mask" @click="closeByDialog"></div>
-            <div class="calendar-dialog-body">
-                <calendar :range="calendar4.range" :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value"  @select="calendar4.select"></calendar>
+            <div class="calendar-dialog" v-if="calendar4.show">
+                <div class="calendar-dialog-mask" @click="closeByDialog"></div>
+                <div class="calendar-dialog-body">
+                    <calendar :range="calendar4.range" :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value"  @select="calendar4.select"></calendar>
+                </div>
             </div>
-        </div>
         </transition>
     </div>
 </template>
