@@ -1,21 +1,21 @@
 <template>
-    <div id="app">
-        <div class="flex">
-            <div>
-                <span>弹出框</span>
-                <input type="text" @click="openByDialog" :value="calendar4.display" readonly>
-            </div>
-        </div>
-
-        <transition name="fade">
-            <div class="calendar-dialog" v-if="calendar4.show">
-                <div class="calendar-dialog-mask" @click="closeByDialog"></div>
-                <div class="calendar-dialog-body">
-                    <calendar :range="calendar4.range" :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value"  @select="calendar4.select"></calendar>
-                </div>
-            </div>
-        </transition>
+  <div id="app">
+    <div class="flex">
+      <div>
+        <span>弹出框</span>
+        <input type="text" @click="openByDialog" :value="calendar4.display" readonly>
+      </div>
     </div>
+
+    <transition name="fade">
+      <div class="calendar-dialog" v-if="calendar4.show">
+        <div class="calendar-dialog-mask" @click="closeByDialog"></div>
+        <div class="calendar-dialog-body">
+          <calendar :range="calendar4.range" :zero="calendar4.zero" :lunar="calendar4.lunar" :value="calendar4.value"  @select="calendar4.select"></calendar>
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
@@ -26,34 +26,34 @@ import { Pipe } from '../utils/applicationModel.js'
 export default {
     name: 'app',
     components: {
-        calendar
+      calendar
     },
     data(){
-        return {
-            calendar4:{
-                display:"2018/02/16 ~ 2018/02/18",
-                show:false,
-                range:true,
-                zero:true,
-                value:[[2018,2,16],[2018,2,18]], //默认日期
-                lunar:true, //显示农历
-                select:(begin,end)=>{
-                    console.log(begin,end)
-                    this.calendar4.show=false;
-                    this.calendar4.value=[begin,end];
-                    this.calendar4.display=begin.join("/")+" ~ "+end.join("/");
-                }
-            }
+      return {
+        calendar4:{
+          display:"2018/02/16 ~ 2018/02/18",
+          show:false,
+          range:true,
+          zero:true,
+          value:[[2018,2,16],[2018,2,18]], //默认日期
+          lunar:true, //显示农历
+          select:(begin,end)=>{
+              console.log(begin,end)
+              this.calendar4.show=false;
+              this.calendar4.value=[begin,end];
+              this.calendar4.display=begin.join("/")+" ~ "+end.join("/");
+          }
         }
+      }
     },
     mounted() {},
     methods:{
-        openByDialog(){
-            this.calendar4.show=true;
-        },
-        closeByDialog(){
-            this.calendar4.show=false;
-        }
+      openByDialog(){
+        this.calendar4.show=true;
+      },
+      closeByDialog(){
+        this.calendar4.show=false;
+      }
     }
 }
 </script>
