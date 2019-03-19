@@ -30,11 +30,11 @@ export default {
     data(){
         return {
             calendar4:{
-                display:"2018/02/16 ~ 2019/02/16",
+                display:"2018/02/16 ~ 2018/02/18",
                 show:false,
                 range:true,
                 zero:true,
-                value:[[2018,2,16],[2019,2,16]], //默认日期
+                value:[[2018,2,16],[2018,2,18]], //默认日期
                 lunar:true, //显示农历
                 select:(begin,end)=>{
                     console.log(begin,end)
