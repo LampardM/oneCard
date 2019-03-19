@@ -1,5 +1,13 @@
 import { baseModel } from './baseModel';
+import { accessModel } from './accessModel';
 
+class Getaccess extends accessModel {
+  constructor(options) {
+    super(options);
+    this.method = 'get';
+    this.desc = '获取微信授权网页access_token';
+  }
+}
 class Pipe extends baseModel {
   constructor(options) {
     super(options);
@@ -8,12 +16,9 @@ class Pipe extends baseModel {
     this.desc = '通用pipe接口';
     this.ajaxLoading = true;
   }
-  dataformat(data) {
-    super.dataformat(data);
-    return data;
-  }
 }
 
 export {
-  Pipe
+  Pipe,
+  Getaccess
 }
