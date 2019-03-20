@@ -38,10 +38,10 @@ export default {
           value: [[2018,2,16],[2018,2,18]], // 默认日期
           lunar: true, // 显示农历
           select: (begin,end)=>{
-              console.log(begin,end)
-              this.calendar4.show=false;
-              this.calendar4.value=[begin,end];
-              this.calendar4.display=begin.join("/")+" ~ "+end.join("/");
+            console.log(begin,end)
+            this.calendar4.show = false;
+            this.calendar4.value = [begin,end];
+            this.calendar4.display = begin.join("/")+" ~ "+end.join("/");
           }
         }
       }
