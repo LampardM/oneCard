@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <div class="flex">
       <div>
         <span>弹出框</span>
@@ -24,7 +24,7 @@ import calendar from '../components/calendar/calendar.vue';
 import { Pipe, Getaccess } from '../utils/applicationModel.js';
 
 export default {
-    name: 'app',
+    name: 'Index',
     components: {
       calendar
     },
@@ -59,7 +59,6 @@ export default {
 </script>
 
 <style>
-/*demo*/
 .flex{
   box-sizing: border-box;
   display: -webkit-box;
