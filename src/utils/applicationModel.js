@@ -1,5 +1,4 @@
 import { baseModel } from './baseModel';
-import { accessModel } from './accessModel';
 
 class Getaccess extends accessModel {
   constructor(options) {

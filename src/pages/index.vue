@@ -21,40 +21,43 @@
 <script>
  
 import calendar from '../components/calendar/calendar.vue';
-import { Pipe, Getaccess } from '../utils/applicationModel.js';
+import oneCardStorage from '../utils/storage.js';
+import { Pipe } from '../utils/applicationModel.js';
 
 export default {
-    name: 'Index',
-    components: {
-      calendar
-    },
-    data(){
-      return {
-        calendar4: {
-          display: "2018/02/16 ~ 2018/02/18",
-          show: false,
-          range: true,
-          zero: true,
-          value: [[2018,2,16],[2018,2,18]], // 默认日期
-          lunar: true, // 显示农历
-          select: (begin,end)=>{
-            console.log(begin,end)
-            this.calendar4.show = false;
-            this.calendar4.value = [begin,end];
-            this.calendar4.display = begin.join("/")+" ~ "+end.join("/");
-          }
+  name: 'index',
+  components: {
+    calendar
+  },
+  data(){
+    return {
+      calendar4: {
+        display: "2018/02/16 ~ 2018/02/18",
+        show: false,
+        range: true,
+        zero: true,
+        value: [[2018,2,16],[2018,2,18]], // 默认日期
+        lunar: true, // 显示农历
+        select: (begin,end)=>{
+          console.log(begin,end)
+          this.calendar4.show = false;
+          this.calendar4.value = [begin,end];
+          this.calendar4.display = begin.join("/")+" ~ "+end.join("/");
         }
       }
-    },
-    mounted() {},
-    methods:{
-      openByDialog(){
-        this.calendar4.show = true;
-      },
-      closeByDialog(){
-        this.calendar4.show = false;
-      }
     }
+  },
+  mounted() {
+    console.log(oneCardStorage, 'card')
+  },
+  methods:{
+    openByDialog(){
+      this.calendar4.show = true;
+    },
+    closeByDialog(){
+      this.calendar4.show = false;
+    }
+  }
 }
 </script>
 

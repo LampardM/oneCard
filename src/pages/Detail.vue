@@ -9,9 +9,12 @@
 </template>
 
 <script>
-import VeLine from 'v-charts/lib/line.common'
+
+import VeLine from 'v-charts/lib/line.common';
+import oneCardStorage from '../utils/storage.js';
 
 export default {
+  name: 'detail',
   components: { VeLine },
   data () {
     return {
@@ -57,6 +60,7 @@ export default {
         ]
       }
     }
-  }
+  },
+  mounted() {},
 }
 </script>

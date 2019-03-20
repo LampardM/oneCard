@@ -1,25 +1,24 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import Router from 'vue-router';
+import AsyncWrappedComponent from '@/utils/AsyncComponent.js';
 
-const pages = [
-  'Index',
-  'Detail'
-]
+const Index = () => AsyncWrappedComponent('index');
+const Detail = () => AsyncWrappedComponent('detail');
 
-Vue.use(Router)
+Vue.use(Router);
 
-export default new Router((pages => {
-  return {
-    routes: (pages => [{
-      path: '',
-      redirect: `/${pages[0]}`
-    }].concat(pages.map(page => {
-      return {
-        path: `/${page}`,
-        name: page,
-        component: resolve => require([`@/pages/${page}`], resolve)
-      }
-    }))
-    )(pages)
-  }
-})(pages))
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      redirect: '/index',
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
+    }
+  ]
+})
