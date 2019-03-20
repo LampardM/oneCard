@@ -2,6 +2,7 @@ import LoadingComponent from '@/components/LoadingComponent';
 import ErrorComponent from '@/components/ErrorComponent';
 
 const AsyncWrappedComponent = (path, type) => {
+
   let curpath = type == 1 ? 'components' : 'pages';
 
   const AsyncComponent = () => ({

@@ -1,12 +1,5 @@
 import { baseModel } from './baseModel';
 
-class Getaccess extends accessModel {
-  constructor(options) {
-    super(options);
-    this.method = 'get';
-    this.desc = '获取微信授权网页access_token';
-  }
-}
 class Pipe extends baseModel {
   constructor(options) {
     super(options);
