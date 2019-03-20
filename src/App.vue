@@ -120,6 +120,10 @@ section {
   display: block;
 }
 
+#app {
+  height: 100%;
+}
+
 body,
 html {
   line-height: 1;

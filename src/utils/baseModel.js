@@ -1,7 +1,9 @@
 import axios from 'axios';
-import { Indicator } from 'mint-ui';
-import 'mint-ui/lib/style.css';
 import _ from 'lodash';
+import Vue from 'vue';
+import { LoadingPlugin } from 'vux';
+
+Vue.use(LoadingPlugin);
 
 class baseModel {
   constructor() {
@@ -22,7 +24,6 @@ class baseModel {
 
   execute() {
     this.ajaxLoading && this._showLoading();
-
     this.axiosInstance = axios.create({
       url: this.url,
       method: this.method,
@@ -43,11 +44,11 @@ class baseModel {
   }
 
   _showLoading(title = '加载中..') {
-    Indicator.open();
+    Vue.$vux.loading.show()
   }
 
   _hideLoading() {
-    Indicator.close();
+    Vue.$vux.loading.hide()
   }
 }
 
