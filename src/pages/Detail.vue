@@ -3,7 +3,7 @@
     <ve-line 
       :data="chartData" 
       :extend="chartExtend" 
-      height="375px">
+      height="10rem">
     </ve-line>
   </div>
 </template>
@@ -18,6 +18,10 @@ export default {
       chartExtend: {
         legend: {
           show: false
+        },
+        grid: {
+          bottom: 0,
+          top: 0
         },
         yAxis: {
           axisLabel: {
@@ -43,7 +47,7 @@ export default {
         rows: [
           { 'date': '01-01', '￥': 1231 },
           { 'date': '01-02', '￥': 1223 },
-          { 'date': '01-03', '￥': 2123 },
+          { 'date': '01-03', '￥': 22123 },
           { 'date': '01-04', '￥': 4123 },
           { 'date': '01-05', '￥': 3123 },
           { 'date': '01-06', '￥': 7123 },
