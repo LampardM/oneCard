@@ -1,12 +1,10 @@
-import LoadingComponent from '@/components/LoadingComponent';
-import ErrorComponent from '@/components/ErrorComponent';
+import LoadingComponent from '@/pages/LoadingComponent';
+import ErrorComponent from '@/pages/ErrorComponent';
 
-const AsyncWrappedComponent = (path, type) => {
-
-  let curpath = type == 1 ? 'components' : 'pages';
+const AsyncWrappedComponent = (path) => {;
 
   const AsyncComponent = () => ({
-    component: import (`@/${curpath}/${path}`),
+    component: import (/* webpackChunkName: "[request]" */`@/pages/${path}`),
     loading: LoadingComponent,
     error: ErrorComponent,
     delay: 200,
