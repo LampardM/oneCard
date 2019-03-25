@@ -6,8 +6,6 @@ import router from './router'
 import NutUI from '@nutui/nutui';
 import '@nutui/nutui/dist/nutui.css';
 
-debugger
-
 NutUI.install(Vue);
 
 Vue.config.productionTip = false
