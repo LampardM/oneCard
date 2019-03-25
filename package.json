@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@nutui/nutui": "^2.0.8",
     "axios": "^0.18.0",
     "echarts": "^4.1.0",
     "lodash": "^4.17.11",

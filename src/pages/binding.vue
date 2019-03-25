@@ -21,7 +21,12 @@ export default {
       show: true,
     }
   },
-  mounted() {},
+  mounted() {
+    this.$dialog({
+      title: "确定删除此订单？",
+      content: "删除后将从你的记录里消失，无法找回"
+    });
+  },
   methods:{}
 }
 </script>
