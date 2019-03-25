@@ -21,12 +21,8 @@ export default {
       show: true,
     }
   },
-  mounted() {
-    
-  },
-  methods:{
-    
-  }
+  mounted() {},
+  methods:{}
 }
 </script>
 
