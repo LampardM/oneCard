@@ -3,10 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import NutUI from '@nutui/nutui';
-import '@nutui/nutui/dist/nutui.css';
+import NutUI from '@nutui/nutui'
+import '@nutui/nutui/dist/nutui.css'
+import '@ztree/ztree_v3/js/jquery.ztree.core.min.js'
+import '@ztree/ztree_v3/js/jquery.ztree.excheck.min.js'
+import '@ztree/ztree_v3/css/metroStyle/metroStyle.css'
 
-NutUI.install(Vue);
+NutUI.install(Vue)
 
 Vue.config.productionTip = false
 

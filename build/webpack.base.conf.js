@@ -4,11 +4,11 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const vuxLoader = require('vux-loader')
+const webpack = require('webpack')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
-
 
 const webpackConfig = {
   context: path.resolve(__dirname, '../'),
@@ -19,15 +19,16 @@ const webpackConfig = {
     path: config.build.assetsRoot,
     filename: '[name].js',
     chunkFilename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath:
+      process.env.NODE_ENV === 'production'
+        ? config.build.assetsPublicPath
+        : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json', '.less'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      vue$: 'vue/dist/vue.esm.js',
+      '@': resolve('src')
     }
   },
   module: {
@@ -40,7 +41,11 @@ const webpackConfig = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [
+          resolve('src'),
+          resolve('test'),
+          resolve('node_modules/webpack-dev-server/client')
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -79,9 +84,15 @@ const webpackConfig = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery'
+    })
+  ]
 }
 
- module.exports = vuxLoader.merge(webpackConfig, {
-   plugins: ['vux-ui']
- })
+module.exports = vuxLoader.merge(webpackConfig, {
+  plugins: ['vux-ui']
+})
