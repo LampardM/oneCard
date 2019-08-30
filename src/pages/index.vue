@@ -41,6 +41,7 @@ import calendar from '../components/calendar/calendar'
 import zTree from '../components/zTree/zTree'
 import oneCardStorage from '../utils/storage.js'
 import { Pipe } from '../utils/applicationModel.js'
+import { normalize, schema } from 'normalizr'
 
 export default {
   name: 'index',
@@ -67,9 +68,36 @@ export default {
     }
   },
   mounted() {
-    console.log(oneCardStorage, 'card')
+    // console.log(oneCardStorage, 'card')
+    this.normalizrCurData()
   },
   methods: {
+    normalizrCurData() {
+      const curNormalizr = {}
+      const curdata = [
+        {
+          id: 3,
+          name: '父级1',
+          author: {
+            id: 1
+          }
+        },
+        {
+          id: 4,
+          name: '父级2',
+          author: {
+            id: 1
+          }
+        }
+      ]
+
+      const mapSchema = new schema.Entity('curData', {}, { idAttribute: 'id' })
+      const mySchema = [mapSchema]
+      // const mySchema = {new schema.Values(mapSchema)}
+      const normalizedData = normalize(curdata, mySchema)
+
+      console.log(normalizedData)
+    },
     openByDialog() {
       this.calendar4.show = true
     },
